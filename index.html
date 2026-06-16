@@ -7,111 +7,120 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="哈尔滨指南">
-    <title>哈尔滨夏日指南</title>
+    <title>哈尔滨夏日指南 V2</title>
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="apple-touch-icon" href="assets/icon.svg">
     <link rel="preload" href="assets/images/hero-central.jpg" as="image">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div class="progress-shell" aria-label="旅行进度">
-      <div>
-        <strong>哈尔滨</strong>
-        <span id="progressDay">第 1 天 / 共 5 天</span>
+    <header class="top-companion glass" aria-label="旅行助手">
+      <div class="companion-primary">
+        <span>Today</span>
+        <strong>24° 晴</strong>
       </div>
-      <div class="progress-track"><span id="progressBar"></span></div>
-      <span id="progressPct">20%</span>
-    </div>
+      <div class="companion-now">
+        <span id="liveTime">09:30</span>
+        <b id="liveNext">下一站：圣索菲亚教堂</b>
+        <em id="liveTip">建议：可以买冰棍。</em>
+      </div>
+      <div class="companion-progress">
+        <span id="progressDay">Day 1 / 5</span>
+        <i><b id="progressBar"></b></i>
+      </div>
+    </header>
 
     <main>
-      <section class="hero snap-section" id="hero" data-day="1">
+      <section class="hero snap-section" id="home" data-day="1">
         <img class="hero-image" src="assets/images/hero-central.jpg" alt="夏日傍晚的哈尔滨中央大街">
         <div class="hero-scrim"></div>
-        <div class="hero-content">
-          <p class="kicker">为芋圆和妈妈定制</p>
-          <h1>哈尔滨</h1>
-          <div class="hero-dates">
-            <span>6 月 22 日</span>
-            <i></i>
-            <span>6 月 26 日</span>
+        <nav class="hero-nav" aria-label="页面章节">
+          <a href="#overview">总览</a>
+          <a href="#map">地图</a>
+          <a href="#days">行程</a>
+          <a href="#food">美食</a>
+          <a href="#tips">贴士</a>
+        </nav>
+        <div class="hero-copy">
+          <p>HARBIN GUIDE</p>
+          <h1>HARBIN</h1>
+          <h2>Summer Guide</h2>
+          <time>22 JUN — 26 JUN 2026</time>
+          <span>Curated for 芋圆 & 妈妈</span>
+        </div>
+        <a class="scroll-cue" href="#overview">向下浏览</a>
+      </section>
+
+      <section class="section overview snap-section" id="overview" data-day="1">
+        <p class="section-label">TRIP OVERVIEW</p>
+        <h2>一份不像攻略的攻略：慢一点、少一点、但每一步都更确定。</h2>
+        <div class="health-grid" id="overviewStats"></div>
+        <div class="daily-strip" id="dailyStrip"></div>
+      </section>
+
+      <section class="section map-overview snap-section" id="map" data-day="3">
+        <div class="split-heading">
+          <div>
+            <p class="section-label">MAP OVERVIEW</p>
+            <h2>酒店、老街、江边、太阳岛，全部围绕一条轻松动线展开。</h2>
           </div>
-          <p class="hero-subtitle">夏日旅行指南</p>
+          <p>点击下方地点卡片，路线会在地图中高亮。</p>
         </div>
-        <div class="hero-bottom glass">
-          <div><b>18°-28°</b><span>晴</span></div>
-          <div><b>4 晚</b><span>6 月 22 日 - 6 月 26 日</span></div>
-          <a href="#overview">向下浏览 ↓</a>
-        </div>
-      </section>
-
-      <section class="section intro snap-section" id="overview" data-day="1">
-        <p class="section-label">行程总览</p>
-        <h2>五个慢下来的夏日，以步行、江风、老街和认真挑选的餐桌为核心。</h2>
-        <div class="overview-grid">
-          <article><span>日期</span><b>2026 年 6 月 22-26 日</b></article>
-          <article><span>住处</span><b>中央大街附近</b></article>
-          <article><span>交通</span><b>步行 + 打车 + 轮渡</b></article>
-          <article><span>原则</span><b>不赶景点</b></article>
-        </div>
-        <aside class="live-card glass" id="liveCard">
-          <div><span>现在</span><b id="liveTime">09:30</b></div>
-          <div><span>下一站</span><b id="liveNext">圣索菲亚教堂</b></div>
-          <div><span>步行</span><b id="liveWalk">8 分钟</b></div>
-          <div><span>天气</span><b>24°</b></div>
-          <p id="liveTip">可以买马迭尔冰棍。</p>
-        </aside>
-      </section>
-
-      <section class="section map-section snap-section" id="map" data-day="3">
-        <p class="section-label">地图</p>
-        <h2>以中央大街为主轴，只有值得看风景的时候才过江。</h2>
-        <div class="map-card">
-          <svg viewBox="0 0 390 520" role="img" aria-label="哈尔滨行程矢量路线图">
-            <path class="river" d="M-20 324 C 72 278, 133 384, 230 326 S 354 286, 422 326"></path>
-            <path class="route" d="M196 446 C186 394 148 360 157 318 C164 284 206 270 212 232 C219 188 178 174 176 132 C174 98 205 76 226 48"></path>
-            <path class="route alt" d="M160 318 C214 306 258 308 314 284"></path>
-            <g class="pin" transform="translate(196 446)"><circle></circle><text>酒店</text></g>
-            <g class="pin" transform="translate(157 318)"><circle></circle><text>圣索菲亚</text></g>
-            <g class="pin" transform="translate(212 232)"><circle></circle><text>中央大街</text></g>
-            <g class="pin" transform="translate(176 132)"><circle></circle><text>防洪纪念塔</text></g>
-            <g class="pin" transform="translate(226 48)"><circle></circle><text>太阳岛</text></g>
-            <g class="pin" transform="translate(314 284)"><circle></circle><text>餐厅</text></g>
-          </svg>
+        <div class="map-layout">
+          <div class="map-legend" id="mapLegend"></div>
+          <div class="map-card">
+            <svg viewBox="0 0 390 520" role="img" aria-label="哈尔滨行程矢量地图">
+              <path class="map-water" d="M-28 318 C65 258 120 388 222 327 S345 276 430 327"></path>
+              <path class="map-subway" d="M74 464 C126 410 154 358 178 302 S208 198 255 125"></path>
+              <path class="map-route route-walk active" data-route="walk" d="M190 450 C181 400 149 367 157 320 C164 285 207 271 211 236"></path>
+              <path class="map-route route-river" data-route="river" d="M170 141 C191 92 219 66 254 50"></path>
+              <path class="map-route route-food" data-route="food" d="M210 236 C255 250 288 268 318 286"></path>
+              <path class="map-route route-ocean" data-route="ocean" d="M190 450 C248 430 310 382 350 322"></path>
+              <g class="map-pin hotel" transform="translate(190 450)"><circle></circle><text>酒店</text></g>
+              <g class="map-pin spot" transform="translate(157 320)"><circle></circle><text>圣索菲亚</text></g>
+              <g class="map-pin spot" transform="translate(211 236)"><circle></circle><text>中央大街</text></g>
+              <g class="map-pin pier" transform="translate(170 141)"><circle></circle><text>码头</text></g>
+              <g class="map-pin spot" transform="translate(254 50)"><circle></circle><text>太阳岛</text></g>
+              <g class="map-pin food" transform="translate(318 286)"><circle></circle><text>餐厅</text></g>
+              <g class="map-pin spot" transform="translate(350 322)"><circle></circle><text>波塞冬</text></g>
+            </svg>
+          </div>
         </div>
       </section>
 
       <div id="days"></div>
 
-      <section class="section guide-section snap-section" id="food" data-day="4">
-        <p class="section-label">餐厅指南</p>
-        <h2>经典哈尔滨餐桌，重点是氛围稳定、选择省心。</h2>
-        <div class="restaurant-grid" id="restaurants"></div>
-      </section>
-
-      <section class="section shopping snap-section" id="shopping" data-day="5">
-        <p class="section-label">购物</p>
-        <h2>少买一点，买对一点，俄罗斯食品店可以直接跳过。</h2>
-        <div class="list-card">
-          <p><b>值得买</b><span>秋林红肠、列巴、马迭尔冰棍、轻量纪念明信片。</span></p>
-          <p><b>跳过</b><span>中央大街高价俄罗斯食品、夸张套娃、临街散装糖果。</span></p>
-          <p><b>最佳时间</b><span>第 5 天上午集中买，回酒店整理，再打车去机场。</span></p>
+      <section class="section food-guide snap-section" id="food" data-day="4">
+        <p class="section-label">RESTAURANT GUIDE</p>
+        <h2>每个饭点都给选择，而不是替你锁死一家店。</h2>
+        <div class="meal-tabs" id="mealTabs"></div>
+        <div class="restaurant-collection" id="restaurantCollection"></div>
+        <div class="xhs-panel">
+          <p class="section-label">小红书高赞 Tips</p>
+          <div id="xhsTags"></div>
         </div>
       </section>
 
-      <section class="section emergency snap-section" id="tips" data-day="5">
-        <p class="section-label">应急信息</p>
-        <h2>提前准备的小细节，真正需要时会很省心。</h2>
-        <div class="emergency-grid">
-          <article><span>打车</span><b>优先滴滴</b><p>机场往返优先打车，预计 70-90 元。</p></article>
-          <article><span>支付</span><b>支付宝 / 微信</b><p>苹果支付不作为主支付，部分商圈可用。</p></article>
-          <article><span>体力</span><b>及时休息</b><p>第 3 天不暴走，太阳岛买观光车。</p></article>
-          <article><span>卫生间</span><b>商场 / 景区入口</b><p>中央商城、防洪纪念塔、太阳岛入口、波塞冬园区优先。</p></article>
-        </div>
+      <section class="section shopping-guide snap-section" id="shopping" data-day="5">
+        <p class="section-label">SHOPPING GUIDE</p>
+        <h2>伴手礼只买确定会吃的。高级感来自克制，不来自塞满行李箱。</h2>
+        <div class="shopping-grid" id="shoppingGrid"></div>
       </section>
 
-      <section class="end snap-section" data-day="5">
-        <p>哈尔滨夏日指南</p>
-        <h2>给一天留一点空白，旅行才会变成自己的记忆。</h2>
+      <section class="section travel-tips snap-section" id="tips" data-day="5">
+        <p class="section-label">TRAVEL TIPS</p>
+        <h2>天气、穿搭、人流、交通、分量，一页就够。</h2>
+        <div class="tips-grid" id="globalTips"></div>
+      </section>
+
+      <section class="end snap-section" id="memory" data-day="5">
+        <p>旅行回忆</p>
+        <h2>5 Days · 9 Places · 8 Restaurants · 2 Ferries · 1 Cable Car · One Summer in Harbin</h2>
+        <div class="memory-grid">
+          <img loading="lazy" src="assets/images/sophia.jpg" alt="圣索菲亚教堂">
+          <img loading="lazy" src="assets/images/river.jpg" alt="松花江日落">
+          <img loading="lazy" src="assets/images/food.jpg" alt="哈尔滨餐桌">
+        </div>
       </section>
     </main>
 
@@ -120,7 +129,7 @@
       <a href="#food">美食</a>
       <a href="#map">地图</a>
       <a href="#shopping">购物</a>
-      <a href="#tips">提示</a>
+      <a href="#tips">贴士</a>
     </nav>
 
     <button class="top-button" id="topButton" aria-label="回到顶部">↑</button>
