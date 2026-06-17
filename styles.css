@@ -244,7 +244,6 @@ h1, h2, h3, p, b, span, em, a, blockquote {
 
 .daily-strip,
 .horizontal-cards,
-.nearby-cards,
 .restaurant-collection,
 .shopping-grid {
   display: grid;
@@ -258,7 +257,6 @@ h1, h2, h3, p, b, span, em, a, blockquote {
 }
 .daily-strip::-webkit-scrollbar,
 .horizontal-cards::-webkit-scrollbar,
-.nearby-cards::-webkit-scrollbar,
 .restaurant-collection::-webkit-scrollbar,
 .shopping-grid::-webkit-scrollbar { display: none; }
 .daily-strip a {
@@ -361,6 +359,239 @@ h1, h2, h3, p, b, span, em, a, blockquote {
   transform: translate(12px, 4px);
 }
 
+.day-cover {
+  position: relative;
+  min-height: 82svh;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  margin-top: 36px;
+  color: #fff;
+  border-radius: 0;
+}
+.day-cover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.day-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.08), rgba(0,0,0,.48));
+}
+.day-cover > div {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 42px 18px;
+}
+.day-cover p {
+  margin: 0 0 12px;
+  color: rgba(255,255,255,.76);
+  letter-spacing: .16em;
+  font-size: 10px;
+  font-weight: 760;
+}
+.day-cover h2 {
+  max-width: 9em;
+  margin: 0;
+  font-size: clamp(44px, 13vw, 84px);
+  line-height: .94;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+.day-cover span {
+  display: block;
+  margin-top: 10px;
+  color: rgba(255,255,255,.82);
+  font-size: 18px;
+}
+.quote-panel {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 78px 18px 54px;
+}
+.quote-panel blockquote {
+  max-width: 720px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--primary);
+  font-size: clamp(30px, 7.6vw, 58px);
+  line-height: 1.12;
+  font-weight: 720;
+  text-wrap: balance;
+}
+.rhythm-grid,
+.transport-strip,
+.gallery-block,
+.food-block,
+.today-tips {
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+.rhythm-grid {
+  display: grid;
+  gap: 14px;
+}
+.why-card {
+  border: 1px solid var(--divider);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+.why-card h3 {
+  margin: 12px 0;
+  font-size: 28px;
+  line-height: 1.12;
+}
+.why-card p:last-child {
+  margin: 0;
+  color: var(--secondary);
+  line-height: 1.8;
+  font-size: 15px;
+}
+.transport-strip {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+.transport-strip article {
+  border: 1px solid var(--divider);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+.transport-strip span,
+.food-row dt {
+  color: var(--secondary);
+  font-size: 11px;
+}
+.transport-strip b {
+  display: block;
+  margin-top: 8px;
+  font-size: 22px;
+}
+.transport-strip em {
+  display: block;
+  margin-top: 8px;
+  color: var(--accent);
+  font-style: normal;
+  font-size: 14px;
+}
+.transport-strip p {
+  margin: 8px 0 0;
+  color: var(--secondary);
+  line-height: 1.6;
+}
+.gallery-block,
+.food-block {
+  margin-top: 46px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.gallery-grid img:first-child {
+  grid-column: 1 / -1;
+}
+.food-list,
+.restaurant-collection {
+  display: grid;
+  gap: 12px;
+  overflow: visible;
+  padding: 14px 0 0;
+}
+.food-row,
+.restaurant-card {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+.food-row img,
+.restaurant-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 188px;
+  object-fit: cover;
+}
+.food-row > div,
+.restaurant-card > div {
+  padding: 16px;
+}
+.food-row h3,
+.restaurant-card h3 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.12;
+}
+.food-row p,
+.restaurant-card p {
+  margin: 8px 0 12px;
+  color: var(--secondary);
+  line-height: 1.58;
+  font-size: 13px;
+}
+.food-row dl,
+.restaurant-card dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+.food-row dl div,
+.restaurant-card dl div {
+  min-width: 0;
+  padding: 8px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--bg) 76%, var(--card));
+}
+.food-row dd,
+.restaurant-card dd {
+  margin: 4px 0 0;
+  font-size: 12px;
+  line-height: 1.38;
+}
+.food-row a,
+.restaurant-card a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  width: max-content;
+  margin-top: 12px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--bg);
+  font-size: 13px;
+  font-weight: 720;
+}
+
 .day-section { padding-top: 96px; }
 .day-hero {
   display: grid;
@@ -404,7 +635,6 @@ blockquote {
 .transport-panel,
 .today-tips,
 .collection-block,
-.nearby-block,
 .memory-note,
 .spot-card,
 .restaurant-card,
@@ -484,7 +714,6 @@ blockquote {
 .today-tips,
 .memory-note,
 .collection-block,
-.nearby-block,
 .xhs-panel {
   margin-top: 12px;
   padding: 18px;
@@ -498,8 +727,7 @@ blockquote {
 }
 .today-tips span,
 .memory-note span,
-#xhsTags span,
-.nearby-row em {
+#xhsTags span {
   display: inline-flex;
   align-items: center;
   min-height: 32px;
@@ -581,13 +809,6 @@ blockquote {
   margin-bottom: 2px;
   color: var(--primary);
 }
-.nearby-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 14px;
-}
-
 .mini-heading {
   display: flex;
   justify-content: space-between;
@@ -650,51 +871,10 @@ blockquote {
   min-height: 34px;
 }
 
-.nearby-cards {
-  grid-auto-columns: minmax(168px, 54%);
-}
-.nearby-cards article {
-  scroll-snap-align: start;
-  min-height: 132px;
-  padding: 14px;
-  border-radius: 20px;
-  border: 1px solid var(--divider);
-  background: color-mix(in srgb, var(--bg) 42%, var(--card));
-}
-.nearby-cards span,
 .tips-grid span,
 .shopping-grid span {
   color: var(--secondary);
   font-size: 12px;
-}
-.nearby-cards b {
-  display: block;
-  margin-top: 8px;
-  font-size: 17px;
-}
-.nearby-cards p {
-  margin: 10px 0 0;
-  color: var(--secondary);
-  line-height: 1.55;
-  font-size: 13px;
-}
-
-.meal-tabs {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding: 0 0 12px;
-}
-.meal-tabs button {
-  border: 1px solid var(--divider);
-  background: var(--card);
-  border-radius: 999px;
-  padding: 10px 16px;
-  white-space: nowrap;
-}
-.meal-tabs button.active {
-  background: var(--primary);
-  color: var(--bg);
 }
 .xhs-panel { margin-top: 18px; }
 #xhsTags { margin-top: 14px; }
@@ -862,7 +1042,6 @@ blockquote {
   .spot-stack { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .restaurant-collection,
   .horizontal-cards { grid-auto-columns: minmax(288px, 34%); }
-  .nearby-cards { grid-auto-columns: minmax(180px, 24%); }
   .shopping-grid { grid-auto-columns: minmax(160px, 22%); }
   .tips-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
@@ -886,5 +1065,111 @@ blockquote {
   *, *::before, *::after {
     animation-duration: .001ms !important;
     transition-duration: .001ms !important;
+  }
+}
+
+/* V3 final card rhythm overrides. Keep these after legacy responsive rules. */
+.restaurant-collection,
+.food-list {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: unset;
+  overflow: visible;
+  gap: 12px;
+  padding-top: 14px;
+}
+.food-row,
+.restaurant-card {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  min-height: 188px;
+}
+.food-row img,
+.restaurant-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 188px;
+  aspect-ratio: auto;
+  object-fit: cover;
+  border-radius: 0;
+}
+.food-row > div,
+.restaurant-card > div {
+  padding: 16px;
+  display: block;
+}
+.food-row h3,
+.restaurant-card h3 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.12;
+}
+.food-row p,
+.restaurant-card p {
+  margin: 8px 0 12px;
+  color: var(--secondary);
+  line-height: 1.58;
+  font-size: 13px;
+}
+.food-row dl,
+.restaurant-card dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+.food-row dl div,
+.restaurant-card dl div {
+  min-width: 0;
+  padding: 8px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--bg) 76%, var(--card));
+}
+.food-row dt,
+.restaurant-card dt {
+  color: var(--secondary);
+  font-size: 11px;
+}
+.food-row dd,
+.restaurant-card dd {
+  margin: 4px 0 0;
+  font-size: 12px;
+  line-height: 1.38;
+}
+.food-row a,
+.restaurant-card a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  width: max-content;
+  margin-top: 12px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--bg);
+  font-size: 13px;
+  font-weight: 720;
+}
+
+@media (min-width: 768px) {
+  .restaurant-collection,
+  .food-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .transport-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .rhythm-grid {
+    grid-template-columns: 1.1fr .9fr;
+    align-items: start;
+  }
+  .rhythm-grid.reverse .timeline {
+    order: 2;
   }
 }

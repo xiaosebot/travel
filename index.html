@@ -16,13 +16,13 @@
   <body>
     <header class="top-companion glass" aria-label="旅行助手">
       <div class="companion-primary">
-        <span>Today</span>
-        <strong>24° 晴</strong>
+        <span>Harbin</span>
+        <strong>Summer</strong>
       </div>
       <div class="companion-now">
-        <span id="liveTime">09:30</span>
-        <b id="liveNext">下一站：圣索菲亚教堂</b>
-        <em id="liveTip">建议：可以买冰棍。</em>
+        <span>22 JUN — 26 JUN</span>
+        <b>为芋圆和妈妈定制</b>
+        <em>Less features, better experience.</em>
       </div>
       <div class="companion-progress">
         <span id="progressDay">Day 1 / 5</span>
@@ -62,20 +62,19 @@
         <div class="split-heading">
           <div>
             <p class="section-label">MAP OVERVIEW</p>
-            <h2>酒店、老街、江边、太阳岛，全部围绕一条轻松动线展开。</h2>
+            <h2>不需要复杂地图，只需要知道城市如何被温柔地串起来。</h2>
           </div>
-          <p>点击下方地点卡片，路线会在地图中高亮。</p>
+          <p>酒店在中央大街附近，第一晚步行，第三天轮渡去太阳岛、索道回城，最后一天从中央大街轻松去机场。</p>
         </div>
         <div class="map-layout">
-          <div class="map-legend" id="mapLegend"></div>
           <div class="map-card">
             <svg viewBox="0 0 390 520" role="img" aria-label="哈尔滨行程矢量地图">
               <path class="map-water" d="M-28 318 C65 258 120 388 222 327 S345 276 430 327"></path>
               <path class="map-subway" d="M74 464 C126 410 154 358 178 302 S208 198 255 125"></path>
-              <path class="map-route route-walk active" data-route="walk" d="M190 450 C181 400 149 367 157 320 C164 285 207 271 211 236"></path>
-              <path class="map-route route-river" data-route="river" d="M170 141 C191 92 219 66 254 50"></path>
-              <path class="map-route route-food" data-route="food" d="M210 236 C255 250 288 268 318 286"></path>
-              <path class="map-route route-ocean" data-route="ocean" d="M190 450 C248 430 310 382 350 322"></path>
+              <path class="map-route route-walk active" d="M190 450 C181 400 149 367 157 320 C164 285 207 271 211 236"></path>
+              <path class="map-route route-river active" d="M170 141 C191 92 219 66 254 50"></path>
+              <path class="map-route route-food active" d="M210 236 C255 250 288 268 318 286"></path>
+              <path class="map-route route-ocean active" d="M190 450 C248 430 310 382 350 322"></path>
               <g class="map-pin hotel" transform="translate(190 450)"><circle></circle><text>酒店</text></g>
               <g class="map-pin spot" transform="translate(157 320)"><circle></circle><text>圣索菲亚</text></g>
               <g class="map-pin spot" transform="translate(211 236)"><circle></circle><text>中央大街</text></g>
@@ -92,8 +91,7 @@
 
       <section class="section food-guide snap-section" id="food" data-day="4">
         <p class="section-label">RESTAURANT GUIDE</p>
-        <h2>每个饭点都给选择，而不是替你锁死一家店。</h2>
-        <div class="meal-tabs" id="mealTabs"></div>
+        <h2>不锁死一家店。每个饭点都有 Top 5，按体力、排队和心情选择。</h2>
         <div class="restaurant-collection" id="restaurantCollection"></div>
         <div class="xhs-panel">
           <p class="section-label">小红书高赞 Tips</p>

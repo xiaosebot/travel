@@ -1,4 +1,4 @@
-const CACHE = "harbin-summer-guide-v2";
+const CACHE = "harbin-summer-guide-v3";
 const ASSETS = [
   "./",
   "./index.html",
@@ -7,11 +7,15 @@ const ASSETS = [
   "./manifest.webmanifest",
   "./assets/icon.svg",
   "./assets/images/hero-central.jpg",
+  "./assets/images/baroque.jpg",
+  "./assets/images/central-morning.jpg",
   "./assets/images/sophia.jpg",
   "./assets/images/river.jpg",
   "./assets/images/sun-island.jpg",
   "./assets/images/poseidon.jpg",
-  "./assets/images/food.jpg"
+  "./assets/images/food.jpg",
+  "./assets/images/restaurant-room.jpg",
+  "./assets/images/guobaorou.jpg"
 ];
 
 self.addEventListener("install", (event) => {
