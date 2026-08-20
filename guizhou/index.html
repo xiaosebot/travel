@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#FAFAF8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="贵州指南">
+    <title>贵州夏日指南</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="assets/icon.svg">
+    <link rel="preload" href="assets/images/xiaoqikong.jpg" as="image">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="top-companion glass" aria-label="旅行进度">
+      <div>
+        <span>Guizhou</span>
+        <strong>Summer</strong>
+      </div>
+      <div>
+        <span>24 AUG — 28 AUG</span>
+        <b>为芋圆和妈妈定制</b>
+        <em>山水很满，行程别太满。</em>
+      </div>
+      <div>
+        <span id="progressDay">Day 1 / 5</span>
+        <i><b id="progressBar"></b></i>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero snap-section" id="home" data-day="1">
+        <img class="hero-image" src="assets/images/xiaoqikong.jpg" alt="贵州小七孔夏日山水">
+        <div class="hero-scrim"></div>
+        <nav class="hero-nav" aria-label="页面导航">
+          <a href="#overview">总览</a>
+          <a href="#map">地图</a>
+          <a href="#days">行程</a>
+          <a href="#food">美食</a>
+          <a href="#tips">贴士</a>
+        </nav>
+        <div class="hero-copy">
+          <p>GUIZHOU GUIDE</p>
+          <h1>GUIZHOU</h1>
+          <h2>Summer Guide</h2>
+          <time>24 AUG — 28 AUG 2026</time>
+          <span>Curated for 芋圆 & 妈妈</span>
+          <blockquote>山水很满，行程别太满。五天四晚，慢慢吃，也慢慢看。</blockquote>
+        </div>
+        <a class="scroll-cue" href="#overview">向下浏览</a>
+      </section>
+
+      <section class="section overview snap-section" id="overview" data-day="1">
+        <p class="section-label">TRIP OVERVIEW</p>
+        <h2>这趟不用赶很多地方，只需要每天把一件事玩好。</h2>
+        <div class="stat-grid" id="overviewStats"></div>
+        <div class="day-strip" id="dayStrip"></div>
+      </section>
+
+      <section class="section map-section snap-section" id="map" data-day="2">
+        <div class="split-heading">
+          <div>
+            <p class="section-label">MAP OVERVIEW</p>
+            <h2>住在喷水池，贵阳这几天其实很好走。</h2>
+          </div>
+          <p>酒店在喷水池附近，第一晚和第二天都以老城为中心；黄果树走大巴，小七孔走高铁，各玩各的，不互相折腾。</p>
+        </div>
+        <div class="map-layout">
+          <div class="map-note">
+            <p class="section-label">HOTEL / HOME</p>
+            <h3>维也纳国际酒店</h3>
+            <p class="hotel-full-name">维也纳国际酒店（贵阳喷水池地铁站太平路网红街店）</p>
+            <span>不要为了 4.8 分和 4.7 分，多坐 30 分钟车。</span>
+          </div>
+          <div class="map-card">
+            <svg viewBox="0 0 390 520" role="img" aria-label="贵州行程关系地图">
+              <path class="map-river" d="M-30 318 C80 250,132 386,224 325 S335 278,420 326"></path>
+              <path class="map-line core" d="M186 398 C164 356,178 310,206 276 C233 243,226 198,194 160"></path>
+              <path class="map-line daytrip" d="M186 398 C256 386,316 340,350 282"></path>
+              <path class="map-line rail" d="M186 398 C142 326,116 230,72 128"></path>
+              <g class="pin home" transform="translate(186 398)"><circle></circle><text>酒店</text></g>
+              <g class="pin food" transform="translate(206 276)"><circle></circle><text>民生路 / 蔡家街</text></g>
+              <g class="pin spot" transform="translate(194 160)"><circle></circle><text>黔灵山</text></g>
+              <g class="pin transit" transform="translate(350 282)"><circle></circle><text>黄果树</text></g>
+              <g class="pin transit" transform="translate(72 128)"><circle></circle><text>荔波小七孔</text></g>
+              <g class="pin" transform="translate(154 438)"><circle></circle><text>贵阳站</text></g>
+              <g class="pin" transform="translate(114 362)"><circle></circle><text>贵阳北</text></g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <div id="days"></div>
+
+      <section class="section food-guide snap-section" id="food" data-day="5">
+        <p class="section-label">RESTAURANT GUIDE</p>
+        <h2>不锁死一家店。每顿饭都有 Plan A，也有“不排队就换”的自由。</h2>
+        <div class="restaurant-guide" id="restaurantGuide"></div>
+      </section>
+
+      <section class="section hotel-map snap-section" id="hotel-food" data-day="5">
+        <p class="section-label">HOTEL & FOOD MAP</p>
+        <h2>住在太平路，最大的好处可能不是交通，是饿了就能下楼。</h2>
+        <div class="area-grid">
+          <article><span>WALKABLE</span><b>太平路 / 喷水池</b><p>适合第一晚和晚上散步，不需要专门打车。</p></article>
+          <article><span>OLD TOWN FOOD</span><b>民生路 / 蔡家街</b><p>Day 2 集中扫街，每样一份两个人分着吃。</p></article>
+          <article><span>OPTIONAL</span><b>飞山街等</b><p>顺路再去，不为了评分多坐 30 分钟车。</p></article>
+        </div>
+      </section>
+
+      <section class="section packing snap-section" id="packing" data-day="5">
+        <p class="section-label">PACKING LIST</p>
+        <h2>东西少一点，走路轻松一点。</h2>
+        <div class="packing-grid" id="packingList"></div>
+      </section>
+
+      <section class="section tips snap-section" id="tips" data-day="5">
+        <p class="section-label">TRAVEL TIPS</p>
+        <h2>贵州 8 月：热、晒、阵雨，防晒和雨衣都要在包里。</h2>
+        <div class="tips-grid" id="travelTips"></div>
+      </section>
+
+      <section class="ending snap-section" id="ending" data-day="5">
+        <img src="assets/images/huangguoshu.jpg" alt="黄果树瀑布">
+        <div>
+          <p>ONE SUMMER IN GUIZHOU</p>
+          <h2>5 Days · 3 Landscapes · 1 Old Town · Lots of Food</h2>
+          <blockquote>五天、几场山水、很多顿好吃的，以及妈妈和女儿的一次贵州夏天。</blockquote>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav glass" aria-label="底部导航">
+      <a href="#days">行程</a>
+      <a href="#food">美食</a>
+      <a href="#map">地图</a>
+      <a href="#packing">清单</a>
+      <a href="#home">顶部</a>
+    </nav>
+
+    <button class="top-button" id="topButton" aria-label="回到顶部">↑</button>
+    <script src="script.js" defer></script>
+  </body>
+</html>
